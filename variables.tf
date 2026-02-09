@@ -27,24 +27,20 @@ variable "tags" {
   }
 }
 
-variable "table_name" {
-  description = "The table name of the OTS instance."
-  default     = "default-table"
+variable "table_schemas" {
+  description = "Map of table names to their primary key definitions (key=name, value=type)"
+  default = {
+    tables_name1 = {
+      pk1 = "Integer"
+      pk2 = "String"
+    }
+    tables_name2 = {
+      pk1 = "Integer"
+      pk2 = "String"
+    }
+  }
 }
 
-variable "primary_keys" {
-  description = "List of primary key definitions for the table."
-  type = list(object({
-    name = string
-    type = string
-  }))
-  default = [
-    {
-      name = "pk1"
-      type = "String"
-    }
-  ]
-}
 
 variable "time_to_live" {
   description = "The retention time of data stored in this table (unit: second). -1 means never expired."
@@ -68,14 +64,4 @@ variable "attach_vpc" {
   description = "Whether to attach a VPC to the OTS instance."
   type        = bool
   default     = false
-}
-
-variable "vpc_name" {
-  description = "The name of the VPC being attached to the OTS instance."
-  default     = ""
-}
-
-variable "vswitch_id" {
-  description = "The ID of the VSwitch being attached to the OTS instance."
-  default     = ""
 }

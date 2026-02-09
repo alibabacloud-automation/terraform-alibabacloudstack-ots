@@ -1,9 +1,3 @@
-variable "instance_id" {
-  description = "The Id of the OTS instance."
-  type        = string
-}
-
-
 variable "name" {
   description = "The name of the OTS instance."
   type        = string
@@ -33,24 +27,10 @@ variable "tags" {
   default     = {}
 }
 
-variable "table_name" {
-  description = "The table name of the OTS instance."
-  type        = string
-  default     = ""
-}
-
-variable "primary_keys" {
-  description = "List of primary key definitions for the table."
-  type = list(object({
-    name = string
-    type = string
-  }))
-  default = [
-    {
-      name = "pk1"
-      type = "String"
-    }
-  ]
+variable "table_schemas" {
+  description = "Map of table names to their primary key definitions (key=name, value=type)"
+  type = map(map(string))
+  default = {}
 }
 
 variable "time_to_live" {

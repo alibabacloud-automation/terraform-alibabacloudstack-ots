@@ -1,41 +1,24 @@
-variable "region" {
-  description = "The region where the existing OTS instance is located."
-  default     = "cn-beijing"
+variable "instance_name" {
+  description = "The name of the OTS instance to create."
+  type        = "tfacc_ots_instance"
 }
 
-variable "existing_instance_name" {
-  description = "The name of the existing OTS instance."
-  type        = string
+variable "instance_type" {
+  description = "The type of the OTS instance. Valid values: Capacity, HighPerformance."
+  default     = "Capacity"
 }
 
-variable "tables_config" {
-  description = "Configuration for tables to create."
-  type = list(object({
-    table_name = string
-    primary_keys = list(object({
-      name = string
-      type = string
-    }))
-    time_to_live                  = number
-    max_version                   = number
-    deviation_cell_version_in_sec = number
-  }))
-}
 
-variable "default_time_to_live" {
-  description = "Default time to live for tables if not specified in config."
-  type        = number
-  default     = -1
-}
-
-variable "default_max_version" {
-  description = "Default max version for tables if not specified in config."
-  type        = number
-  default     = 1
-}
-
-variable "default_deviation" {
-  description = "Default deviation cell version in seconds if not specified in config."
-  type        = number
-  default     = 86400
+variable "table_schemas" {
+  description = "Map of table names to their primary key definitions (key=name, value=type)"
+  default = {
+    tables_name1 = {
+      pk1 = "Integer"
+      pk2 = "String"
+    }
+    tables_name2 = {
+      pk1 = "Integer"
+      pk2 = "String"
+    }
+  }
 }
