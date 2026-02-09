@@ -1,0 +1,5 @@
+{
+  "name": "ots_instance_cluster",
+  "description": "Module for creating OTS instance and table",
+  "provider": "alibabacloudstack"
+}

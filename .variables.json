@@ -1,0 +1,75 @@
+{
+  "name": {
+    "type": "string",
+    "default": "terraform-apsara-ots-cluster",
+    "description": "The name of the OTS instance."
+  },
+  "description": {
+    "type": "string",
+    "default": "Terraform managed OTS instance",
+    "description": "A brief description of the OTS instance."
+  },
+  "accessed_by": {
+    "type": "string",
+    "default": "Any",
+    "description": "The network limitation for accessing the OTS instance. Valid values: Any, Vpc, ConsoleOrVpc."
+  },
+  "instance_type": {
+    "type": "string",
+    "default": "HighPerformance",
+    "description": "The type of the OTS instance. Valid values: Capacity, HighPerformance."
+  },
+  "tags": {
+    "type": "map(string)",
+    "default": {
+      "CreatedBy": "Terraform",
+      "ManagedBy": "terraform-alibabacloudstack-ots"
+    },
+    "description": "A mapping of tags to assign to the OTS instance."
+  },
+  "table_name": {
+    "type": "string",
+    "default": "default-table",
+    "description": "The table name of the OTS instance."
+  },
+  "primary_keys": {
+    "type": "list(object({name=string, type=string}))",
+    "default": [
+      {
+        "name": "pk1",
+        "type": "String"
+      }
+    ],
+    "description": "List of primary key definitions for the table."
+  },
+  "time_to_live": {
+    "type": "number",
+    "default": -1,
+    "description": "The retention time of data stored in this table (unit: second). -1 means never expired."
+  },
+  "max_version": {
+    "type": "number",
+    "default": 1,
+    "description": "The maximum number of versions stored in this table."
+  },
+  "deviation_cell_version_in_sec": {
+    "type": "number",
+    "default": 86400,
+    "description": "The max version offset of the table."
+  },
+  "attach_vpc": {
+    "type": "bool",
+    "default": false,
+    "description": "Whether to attach a VPC to the OTS instance."
+  },
+  "vpc_name": {
+    "type": "string",
+    "default": "",
+    "description": "The name of the VPC being attached to the OTS instance."
+  },
+  "vswitch_id": {
+    "type": "string",
+    "default": "",
+    "description": "The ID of the VSwitch being attached to the OTS instance."
+  }
+}

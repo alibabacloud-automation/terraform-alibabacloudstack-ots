@@ -1,0 +1,32 @@
+{
+  "ots_instance_id": {
+    "description": "The ID of the OTS instance."
+  },
+  "ots_instance_name": {
+    "description": "The name of the OTS instance."
+  },
+  "ots_instance_description": {
+    "description": "The description of the OTS instance."
+  },
+  "ots_instance_type": {
+    "description": "The type of the OTS instance."
+  },
+  "ots_instance_accessed_by": {
+    "description": "The network limitation for accessing the OTS instance."
+  },
+  "ots_table_name": {
+    "description": "The name of the OTS table."
+  },
+  "ots_table_id": {
+    "description": "The ID of the OTS table."
+  },
+  "vpc_attachment_id": {
+    "description": "The ID of the VPC attachment."
+  },
+  "vpc_name": {
+    "description": "The name of the attached VPC."
+  },
+  "vswitch_id": {
+    "description": "The ID of the attached VSwitch."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "create-ots-instance-with-vpc",
+  "description": "Create OTS instance, table and bind to specified VPC",
+  "provider": "alibabacloudstack",
+  "usecase": "This example demonstrates how to create an OTS instance with a table and attach it to a VPC. It supports both creating new VPC/VSwitch or using existing ones.",
+  "inputs": [
+    {
+      "name": "instance_name",
+      "description": "The name of the OTS instance to create",
+      "required": true
+    },
+    {
+      "name": "table_name",
+      "description": "The name of the OTS table to create",
+      "required": true
+    },
+    {
+      "name": "primary_keys",
+      "description": "List of primary key definitions for the table",
+      "required": true
+    },
+    {
+      "name": "create_vpc",
+      "description": "Whether to create a new VPC and VSwitch",
+      "required": false,
+      "default": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "ots_instance_id",
+      "description": "The ID of the created OTS instance"
+    },
+    {
+      "name": "ots_table_name",
+      "description": "The name of the created OTS table"
+    },
+    {
+      "name": "vpc_id",
+      "description": "The ID of the VPC"
+    }
+  ]
+}

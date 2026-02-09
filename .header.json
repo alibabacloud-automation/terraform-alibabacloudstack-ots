@@ -1,0 +1,5 @@
+{
+  "name": "terraform-alibabacloudstack-ots",
+  "description": "Terraform module for Alibaba Cloud Table Store (OTS)",
+  "provider": "alibabacloudstack"
+}
