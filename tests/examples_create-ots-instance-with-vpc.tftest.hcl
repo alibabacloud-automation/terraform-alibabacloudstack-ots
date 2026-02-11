@@ -1,7 +1,7 @@
 run "validate" {
   command = apply
   module {
-    source = "./examples/create-tables-for-existing-instance"
+    source = "../examples/create-tables-for-existing-instance"
   }
   variables {
     # instance_name = 

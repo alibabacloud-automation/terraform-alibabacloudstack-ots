@@ -9,16 +9,6 @@
     "default": "Terraform managed OTS instance",
     "description": "A brief description of the OTS instance."
   },
-  "accessed_by": {
-    "type": "string",
-    "default": "Any",
-    "description": "The network limitation for accessing the OTS instance. Valid values: Any, Vpc, ConsoleOrVpc."
-  },
-  "instance_type": {
-    "type": "string",
-    "default": "HighPerformance",
-    "description": "The type of the OTS instance. Valid values: Capacity, HighPerformance."
-  },
   "tags": {
     "type": "map(string)",
     "default": {

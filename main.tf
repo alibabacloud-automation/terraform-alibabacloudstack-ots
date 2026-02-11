@@ -3,8 +3,6 @@ module "default" {
 
   name                          = var.name
   description                   = var.description
-  accessed_by                   = var.accessed_by
-  instance_type                 = var.instance_type
   tags                          = var.tags
   table_schemas                 = var.table_schemas
   time_to_live                  = var.time_to_live

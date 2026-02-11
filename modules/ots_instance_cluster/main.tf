@@ -7,7 +7,7 @@ data "alibabacloudstack_ots_instances" "default" {
   ids = [var.name]
 }
 
-data "alibabacloudstack_vswitchs" "default" {
+data "alibabacloudstack_vpc_vswitches" "default" {
   ids = [var.vswitch_id]
 }
 
@@ -15,10 +15,10 @@ data "alibabacloudstack_vpc_vpcs" "default" {
   vswitch_id = var.vswitch_id
 }
 
+data "alibabacloudstack_ots_clusters" "anyone" {}
 
 locals {
-  instance_create = data.alibabacloudstack_ots_instances.default.instances.length > 0 ? 0 : 1
-  vswitch_create  = data.alibabacloudstack_vswitchs.default.ids.length <= 0 && var.attach_vpc ? 1 : 0
+  vswitch_create  = length(data.alibabacloudstack_vpc_vswitches.default.ids) <= 0 && var.attach_vpc ? 1 : 0
 }
 
 
@@ -37,23 +37,13 @@ resource "alibabacloudstack_vpc_vswitch" "default" {
 }
 
 resource "alibabacloudstack_ots_instance" "default" {
-  count         = local.instance_create
+  count         = length(data.alibabacloudstack_ots_instances.default.ids) > 0 ? 0 : 1
   name          = var.name
   description   = var.description
-  accessed_by   = var.accessed_by
-  instance_type = var.instance_type
-  tags          = var.tags
-}
-
-data "alibabacloudstack_ots_instances" "default" {
-  ids = [var.name]
+  specification = data.alibabacloudstack_ots_clusters.anyone.clusters.0.cluster_type
 }
 
 locals {
-  instance_name = local.instance_create == 0 ? var.name : alibabacloudstack_ots_instance.default.name
-  vpc_name      = local.vswitch_create == 0 ? alibabacloudstack_vpc_vpc.default[0].vpc_name : data.alibabacloudstack_vpc_vpcs.default.vpcs.0.vpc_name
-  vpc_id        = local.vswitch_create == 0 ? alibabacloudstack_vpc_vpc.default[0].id : data.alibabacloudstack_vpc_vpcs.default.vpcs.0.vpc_id
-  vswitch_id    = local.vswitch_create == 0 ? alibabacloudstack_vpc_vswitch.default[0].id : data.alibabacloudstack_vpc_vswitchs.default.vswitches.0.id
   ots_tables = {
     for table_name, pk_map in var.table_schemas :
     table_name => {
@@ -71,7 +61,7 @@ locals {
 resource "alibabacloudstack_ots_table" "default" {
   for_each      = local.ots_tables
   table_name    = each.key
-  instance_name = local.instance_name
+  instance_name = var.name
   dynamic "primary_key" {
     for_each = each.value.primary_key
     content {
@@ -87,8 +77,7 @@ resource "alibabacloudstack_ots_table" "default" {
 
 resource "alibabacloudstack_ots_instance_attachment" "default" {
   count         = var.attach_vpc ? 1 : 0
-  instance_name = local.instance_name
-  vpc_name      = local.vpc_name
-  vpc_id        = local.vpc_id
-  vswitch_id    = local.vswitch_id
+  instance_name = length(data.alibabacloudstack_ots_instances.default.ids) > 0 ? var.name : alibabacloudstack_ots_instance.default.0.name
+  vpc_name      = var.name
+  vswitch_id    = local.vswitch_create == 0 && var.attach_vpc ? data.alibabacloudstack_vpc_vswitches.default.vswitches.0.id : alibabacloudstack_vpc_vswitch.default[0].id
 }

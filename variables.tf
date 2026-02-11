@@ -8,16 +8,6 @@ variable "description" {
   default     = "Terraform managed OTS instance"
 }
 
-variable "accessed_by" {
-  description = "The network limitation for accessing the OTS instance. Valid values: Any, Vpc, ConsoleOrVpc."
-  default     = "Any"
-}
-
-variable "instance_type" {
-  description = "The type of the OTS instance. Valid values: Capacity, HighPerformance."
-  default     = "HighPerformance"
-}
-
 variable "tags" {
   description = "A mapping of tags to assign to the OTS instance."
   type        = map(string)

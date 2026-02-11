@@ -13,16 +13,6 @@ output "ots_instance_description" {
   value       = module.default.ots_instance_description
 }
 
-output "ots_instance_type" {
-  description = "The type of the OTS instance."
-  value       = module.default.ots_instance_type
-}
-
-output "ots_instance_accessed_by" {
-  description = "The network limitation for accessing the OTS instance."
-  value       = module.default.ots_instance_accessed_by
-}
-
 output "ots_table_name" {
   description = "The name of the OTS table."
   value       = module.default.ots_table_name
