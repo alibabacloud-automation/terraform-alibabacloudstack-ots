@@ -4,7 +4,7 @@ data "alibabacloudstack_zones" "default" {
 
 
 data "alibabacloudstack_ots_instances" "default" {
-  ids = [var.name]
+  ids = [var.ots_instance_id]
 }
 
 data "alibabacloudstack_vpc_vswitches" "default" {
