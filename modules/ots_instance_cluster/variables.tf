@@ -1,3 +1,8 @@
+variable "ots_instance_id" {
+  description = "The id of the OTS instance."
+  type        = string
+}
+
 variable "name" {
   description = "The name of the OTS instance."
   type        = string
