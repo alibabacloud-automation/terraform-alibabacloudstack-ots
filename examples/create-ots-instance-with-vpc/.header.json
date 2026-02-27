@@ -1,43 +1,26 @@
 {
   "name": "create-ots-instance-with-vpc",
-  "description": "Create OTS instance, table and bind to specified VPC",
+  "description": "Create OTS instance with tables and attach to VPC",
   "provider": "alibabacloudstack",
-  "usecase": "This example demonstrates how to create an OTS instance with a table and attach it to a VPC. It supports both creating new VPC/VSwitch or using existing ones.",
+  "usecase": "This example demonstrates how to create an OTS instance with multiple tables and attach it to a VPC. It creates new VPC/VSwitch resources.",
   "inputs": [
     {
       "name": "instance_name",
       "description": "The name of the OTS instance to create",
-      "required": true
+      "required": false,
+      "default": "tfots1"
     },
     {
-      "name": "table_name",
-      "description": "The name of the OTS table to create",
-      "required": true
+      "name": "table_schemas",
+      "description": "Map of table names to their primary key definitions",
+      "required": false
     },
     {
-      "name": "primary_keys",
-      "description": "List of primary key definitions for the table",
-      "required": true
-    },
-    {
-      "name": "create_vpc",
-      "description": "Whether to create a new VPC and VSwitch",
+      "name": "attach_vpc",
+      "description": "Whether to attach a VPC to the OTS instance",
       "required": false,
       "default": true
     }
   ],
-  "outputs": [
-    {
-      "name": "ots_instance_id",
-      "description": "The ID of the created OTS instance"
-    },
-    {
-      "name": "ots_table_name",
-      "description": "The name of the created OTS table"
-    },
-    {
-      "name": "vpc_id",
-      "description": "The ID of the VPC"
-    }
-  ]
+  "outputs": []
 }

@@ -1,4 +1,8 @@
 {
+  "ots_instance_id": {
+    "type": "string",
+    "description": "The id of the OTS instance."
+  },
   "name": {
     "type": "string",
     "description": "The name of the OTS instance."
@@ -8,21 +12,10 @@
     "default": "",
     "description": "A brief description of the OTS instance."
   },
-
-  "tags": {
-    "type": "map(string)",
+  "table_schemas": {
+    "type": "map(map(string))",
     "default": {},
-    "description": "A mapping of tags to assign to the OTS instance."
-  },
-  "table_name": {
-    "type": "string",
-    "default": "",
-    "description": "The table name of the OTS instance."
-  },
-  "primary_keys": {
-    "type": "list(object({name=string, type=string}))",
-    "default": [{"name": "pk1", "type": "String"}],
-    "description": "List of primary key definitions for the table."
+    "description": "Map of table names to their primary key definitions (key=name, value=type)"
   },
   "time_to_live": {
     "type": "number",

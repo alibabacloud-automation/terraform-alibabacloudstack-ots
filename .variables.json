@@ -17,20 +17,19 @@
     },
     "description": "A mapping of tags to assign to the OTS instance."
   },
-  "table_name": {
-    "type": "string",
-    "default": "default-table",
-    "description": "The table name of the OTS instance."
-  },
-  "primary_keys": {
-    "type": "list(object({name=string, type=string}))",
-    "default": [
-      {
-        "name": "pk1",
-        "type": "String"
+  "table_schemas": {
+    "type": "map(map(string))",
+    "default": {
+      "tables_name1": {
+        "pk1": "Integer",
+        "pk2": "String"
+      },
+      "tables_name2": {
+        "pk1": "Integer",
+        "pk2": "String"
       }
-    ],
-    "description": "List of primary key definitions for the table."
+    },
+    "description": "Map of table names to their primary key definitions (key=name, value=type)"
   },
   "time_to_live": {
     "type": "number",
@@ -51,15 +50,5 @@
     "type": "bool",
     "default": false,
     "description": "Whether to attach a VPC to the OTS instance."
-  },
-  "vpc_name": {
-    "type": "string",
-    "default": "",
-    "description": "The name of the VPC being attached to the OTS instance."
-  },
-  "vswitch_id": {
-    "type": "string",
-    "default": "",
-    "description": "The ID of the VSwitch being attached to the OTS instance."
   }
 }

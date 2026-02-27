@@ -1,32 +1,25 @@
 {
   "name": "create-tables-for-existing-instance",
-  "description": "Create multiple tables for existing OTS instance",
+  "description": "Create OTS instance and multiple tables",
   "provider": "alibabacloudstack",
-  "usecase": "This example demonstrates how to create multiple tables for an existing OTS instance in batch mode.",
+  "usecase": "This example demonstrates how to create an OTS instance with multiple tables in batch mode.",
   "inputs": [
     {
-      "name": "existing_instance_name",
-      "description": "The name of the existing OTS instance",
-      "required": true
+      "name": "instance_name",
+      "description": "The name of the OTS instance to create",
+      "required": false,
+      "default": "tfots2"
     },
     {
-      "name": "tables_config",
-      "description": "Configuration array for tables to create",
-      "required": true
+      "name": "table_schemas",
+      "description": "Map of table names to their primary key definitions",
+      "required": false
     }
   ],
   "outputs": [
     {
-      "name": "created_table_ids",
-      "description": "List of IDs of the created tables"
-    },
-    {
-      "name": "created_table_names",
-      "description": "List of names of the created tables"
-    },
-    {
-      "name": "tables_count",
-      "description": "Number of tables created"
+      "name": "existing_instance_name",
+      "description": "The name of the created OTS instance"
     }
   ]
 }
