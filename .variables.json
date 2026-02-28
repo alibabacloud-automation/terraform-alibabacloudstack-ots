@@ -6,8 +6,7 @@
     "i18n": {
       "zh-Hans": "OTS实例的名称。",
       "en-US": "The name of the OTS instance."
-    },
-    "default": "terraform-apsara-ots-cluster"
+    }
   },
   "description": {
     "description": "A brief description of the OTS instance.",
@@ -17,7 +16,6 @@
       "zh-Hans": "OTS实例的简要描述。",
       "en-US": "A brief description of the OTS instance."
     },
-    "default": "Terraform managed OTS instance"
   },
   "tags": {
     "description": "A mapping of tags to assign to the OTS instance.",
@@ -28,8 +26,6 @@
       "en-US": "A mapping of tags to assign to the OTS instance."
     },
     "default": {
-      "CreatedBy": "Terraform",
-      "ManagedBy": "terraform-alibabacloudstack-ots"
     }
   },
   "table_schemas": {
@@ -41,13 +37,6 @@
       "en-US": "Map of table names to their primary key definitions (key=name, value=type)"
     },
     "default": {
-      "tables_name1": {
-        "pk1": "Integer",
-        "pk2": "String"
-      },
-      "tables_name2": {
-        "pk1": "Integer",
-        "pk2": "String"
       }
     }
   },

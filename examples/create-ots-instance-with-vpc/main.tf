@@ -18,6 +18,6 @@ module "ots_instance" {
   source        = "../../modules/ots_instance_cluster"
   name          = var.instance_name
   table_schemas = var.table_schemas
-  attach_vpc    = var.attach_vpc
+  attach_vpc    = true
   vswitch_id    = alibabacloudstack_vpc_vswitch.existing.id
 }

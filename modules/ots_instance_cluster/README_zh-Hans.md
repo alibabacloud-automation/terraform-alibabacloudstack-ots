@@ -45,13 +45,12 @@ module "ots" {
 | 名称 | 版本 |
 |------|------|
 | terraform | >= 0.13 |
-| alibabacloudstack provider | >= 3.18 |
 
 ## 提供商
 
 | 名称 | 版本 |
 |------|------|
-| alibabacloudstack | >= 3.18 |
+| alibabacloudstack | >= 3.18.24, < 3.19.0 |
 
 ## 输入变量
 

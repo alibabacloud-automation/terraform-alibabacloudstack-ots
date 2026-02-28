@@ -1,34 +1,20 @@
 variable "name" {
   description = "The name of the OTS instance."
-  default     = "terraform-apsara-ots-cluster"
 }
 
 variable "description" {
   description = "A brief description of the OTS instance."
-  default     = "Terraform managed OTS instance"
 }
 
 variable "tags" {
   description = "A mapping of tags to assign to the OTS instance."
   type        = map(string)
   default = {
-    CreatedBy = "Terraform"
-    ManagedBy = "terraform-alibabacloudstack-ots"
   }
 }
 
 variable "table_schemas" {
   description = "Map of table names to their primary key definitions (key=name, value=type)"
-  default = {
-    tables_name1 = {
-      pk1 = "Integer"
-      pk2 = "String"
-    }
-    tables_name2 = {
-      pk1 = "Integer"
-      pk2 = "String"
-    }
-  }
 }
 
 

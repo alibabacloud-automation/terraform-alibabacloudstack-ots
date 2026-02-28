@@ -19,13 +19,13 @@ module "ots" {
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13 |
-| alibabacloudstack provider | >= 4.64 |
+| alibabacloudstack provider | >= 3.18.24, < 3.19.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| alibabacloudstack | >= 4.64 |
+| alibabacloudstack | >= 3.18.24, < 3.19.0 |
 
 ## Inputs
 
