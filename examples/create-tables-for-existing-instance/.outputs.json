@@ -1,44 +1,27 @@
 {
-  "existing_instance_name": {
-    "description": "The name of the existing OTS instance.",
-    "i18n": {
-      "zh-Hans": "现有OTS实例的名称。",
-      "en-US": "The name of the existing OTS instance."
-    }
-  },
-  "existing_instance_id": {
-    "description": "The ID of the existing OTS instance.",
-    "i18n": {
-      "zh-Hans": "现有OTS实例的ID。",
-      "en-US": "The ID of the existing OTS instance."
-    }
-  },
-  "existing_instance_description": {
-    "description": "The description of the existing OTS instance.",
-    "i18n": {
-      "zh-Hans": "现有OTS实例的描述。",
-      "en-US": "The description of the existing OTS instance."
-    }
-  },
-  "cluster_type": {
-    "description": "The cluster type used for the OTS instance.",
-    "i18n": {
-      "zh-Hans": "用于OTS实例的集群类型。",
-      "en-US": "The cluster type used for the OTS instance."
-    }
-  },
   "ots_table_names": {
-    "description": "The names of the OTS tables.",
+    "description": "The names of the OTS tables that were actually created.",
     "i18n": {
+      "zh-Hans": "实际创建的OTS表的名称。",
+      "en-US": "The names of the OTS tables that were actually created."
+    },
+    "i18n_old": {
       "zh-Hans": "OTS表格的名称列表。",
       "en-US": "The names of the OTS tables."
     }
   },
-  "ots_table_ids": {
-    "description": "The IDs of the OTS tables.",
+  "ots_instance_id": {
+    "description": "The ID of the OTS instance.",
     "i18n": {
-      "zh-Hans": "OTS表格的ID列表。",
-      "en-US": "The IDs of the OTS tables."
+      "zh-Hans": "OTS 实例的 ID。",
+      "en-US": "The ID of the OTS instance."
+    }
+  },
+  "ots_instance_name": {
+    "description": "The name of the OTS instance.",
+    "i18n": {
+      "zh-Hans": "OTS 实例的名称。",
+      "en-US": "The name of the OTS instance."
     }
   }
 }

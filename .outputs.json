@@ -2,22 +2,15 @@
   "ots_instance_id": {
     "description": "The ID of the OTS instance.",
     "i18n": {
-      "zh-Hans": "OTS实例的ID。",
+      "zh-Hans": "OTS 实例的 ID。",
       "en-US": "The ID of the OTS instance."
     }
   },
   "ots_instance_name": {
     "description": "The name of the OTS instance.",
     "i18n": {
-      "zh-Hans": "OTS实例的名称。",
+      "zh-Hans": "OTS 实例的名称。",
       "en-US": "The name of the OTS instance."
-    }
-  },
-  "ots_instance_description": {
-    "description": "The description of the OTS instance.",
-    "i18n": {
-      "zh-Hans": "OTS实例的描述。",
-      "en-US": "The description of the OTS instance."
     }
   },
   "vpc_attachment_id": {
@@ -27,18 +20,18 @@
       "en-US": "The ID of the VPC attachment."
     }
   },
-  "vpc_name": {
-    "description": "The name of the attached VPC.",
-    "i18n": {
-      "zh-Hans": "附加的VPC名称。",
-      "en-US": "The name of the attached VPC."
-    }
-  },
   "vswitch_id": {
     "description": "The ID of the attached VSwitch.",
     "i18n": {
-      "zh-Hans": "附加的VSwitch的ID。",
+      "zh-Hans": "附加的虚拟交换机ID。",
       "en-US": "The ID of the attached VSwitch."
+    }
+  },
+  "vpc_id": {
+    "description": "The ID of the attached or created VPC.",
+    "i18n": {
+      "zh-Hans": "附加或创建的VPC的ID。",
+      "en-US": "The ID of the attached or created VPC."
     }
   }
 }

@@ -22,7 +22,7 @@ run "validate" {
   }
 
   assert {
-    condition     = output.ots_table_names == "tfots"
+    condition     = output.ots_instance_name == "tfots"
     error_message = "Exactly one table should be created."
   }
 

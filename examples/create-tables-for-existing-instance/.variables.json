@@ -1,21 +1,21 @@
 {
-  "ots_instance_id" : {
-    "description" : "The ID of an existing OTS instance",
-    "type" : "string",
-    "optional" : true,
-    "i18n" : {
-      "zh-Hans" : "已经存在的Ots实例ID",
-      "en-US" : "The ID of an existing OTS instance"
+  "ots_instance_id": {
+    "description": "The ID of an existing OTS instance",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "已经存在的Ots实例ID",
+      "en-US": "The ID of an existing OTS instance"
     }
   },
-  "table_schemas" : {
-    "description" : "Map of table names to their primary key definitions (key=name, value=type)",
-    "type" : "map(map(string))",
-    "optional" : true,
-    "i18n" : {
-      "zh-Hans" : "表名到主键定义的映射（键=名称，值=类型）",
-      "en-US" : "Map of table names to their primary key definitions (key=name, value=type)"
+  "table_schemas": {
+    "description": "Map of table names to their primary key definitions (key=name, value=type)",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "表名到主键定义的映射（键=名称，值=类型）",
+      "en-US": "Map of table names to their primary key definitions (key=name, value=type)"
     },
-    "default" : { }
+    "default": "{}"
   }
 }

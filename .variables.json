@@ -2,9 +2,9 @@
   "name": {
     "description": "The name of the OTS instance.",
     "type": "string",
-    "optional": true,
+    "optional": false,
     "i18n": {
-      "zh-Hans": "OTS实例的名称。",
+      "zh-Hans": "OTS 实例的名称。",
       "en-US": "The name of the OTS instance."
     }
   },
@@ -13,52 +13,40 @@
     "type": "string",
     "optional": true,
     "i18n": {
-      "zh-Hans": "OTS实例的简要描述。",
+      "zh-Hans": "OTS 实例的简要描述。",
       "en-US": "A brief description of the OTS instance."
-    }
-  },
-  "tags": {
-    "description": "A mapping of tags to assign to the OTS instance.",
-    "type": "map(string)",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "要分配给OTS实例的标签映射。",
-      "en-US": "A mapping of tags to assign to the OTS instance."
     },
-    "default": {
-    }
+    "default": ""
   },
   "table_schemas": {
     "description": "Map of table names to their primary key definitions (key=name, value=type)",
     "type": "map(map(string))",
     "optional": true,
     "i18n": {
-      "zh-Hans": "表名到主键定义的映射（键=名称，值=类型）",
+      "zh-Hans": "表名到其主键定义的映射（键为表名，值为主键类型）",
       "en-US": "Map of table names to their primary key definitions (key=name, value=type)"
     },
-    "default": {
-      }
-    }
+    "default": "{}"
   },
   "time_to_live": {
     "description": "The retention time of data stored in this table (unit: second). -1 means never expired.",
     "type": "number",
     "optional": true,
     "i18n": {
-      "zh-Hans": "表中存储数据的保留时间（单位：秒）。-1表示永不过期。",
-      "en-US": "The retention time of data stored in this table (unit: second). -1 means never expired."
+      "zh-Hans": "该表中存储的数据的保留时间（单位：秒），-1 表示永不过期。",
+      "en-US": "The retention time of data stored in this table (in seconds). A value of -1 means the data never expires."
     },
-    "default": -1
+    "default": "-1"
   },
   "max_version": {
     "description": "The maximum number of versions stored in this table.",
     "type": "number",
     "optional": true,
     "i18n": {
-      "zh-Hans": "表中存储的最大版本数。",
+      "zh-Hans": "此表中存储的版本最大数量。",
       "en-US": "The maximum number of versions stored in this table."
     },
-    "default": 1
+    "default": "1"
   },
   "deviation_cell_version_in_sec": {
     "description": "The max version offset of the table.",
@@ -66,9 +54,9 @@
     "optional": true,
     "i18n": {
       "zh-Hans": "表的最大版本偏移量。",
-      "en-US": "The max version offset of the table."
+      "en-US": "The maximum version offset of the table."
     },
-    "default": 86400
+    "default": "86400"
   },
   "attach_vpc": {
     "description": "Whether to attach a VPC to the OTS instance.",
@@ -78,6 +66,26 @@
       "zh-Hans": "是否将VPC附加到OTS实例。",
       "en-US": "Whether to attach a VPC to the OTS instance."
     },
-    "default": false
+    "default": "false"
+  },
+  "vswitch_id": {
+    "description": "The ID of an existing VSwitch to attach (when attach_vpc=true).",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "要附加的现有虚拟交换机（VSwitch）的ID（当attach_vpc=true时）。",
+      "en-US": "The ID of an existing VSwitch to attach (when attach_vpc is true)."
+    },
+    "default": ""
+  },
+  "vpc_name": {
+    "description": "Name prefix for auto-created VPC/VSwitch (when attach_vpc=true and vswitch_id is not provided).",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "自动创建VPC/VSwitch时使用的名称前缀（当attach_vpc=true且未提供vswitch_id时）",
+      "en-US": "Name prefix for auto-created VPC/VSwitch (used when attach_vpc is true and vswitch_id is not provided)."
+    },
+    "default": ""
   }
 }

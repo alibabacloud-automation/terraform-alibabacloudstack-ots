@@ -1,25 +1,4 @@
 {
-  "vpc_id": {
-    "description": "The ID of the created VPC.",
-    "i18n": {
-      "zh-Hans": "创建的VPC的ID。",
-      "en-US": "The ID of the created VPC."
-    }
-  },
-  "vswitch_id": {
-    "description": "The ID of the created VSwitch.",
-    "i18n": {
-      "zh-Hans": "创建的VSwitch的ID。",
-      "en-US": "The ID of the created VSwitch."
-    }
-  },
-  "zone_id": {
-    "description": "The zone ID of the VSwitch.",
-    "i18n": {
-      "zh-Hans": "VSwitch的可用区ID。",
-      "en-US": "The zone ID of the VSwitch."
-    }
-  },
   "ots_instance_id": {
     "description": "The ID of the OTS instance.",
     "i18n": {

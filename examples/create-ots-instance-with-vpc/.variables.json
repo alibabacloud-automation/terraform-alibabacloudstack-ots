@@ -2,7 +2,7 @@
   "instance_name": {
     "description": "The name of the OTS instance to create.",
     "type": "string",
-    "optional": true,
+    "optional": false,
     "i18n": {
       "zh-Hans": "要创建的OTS实例名称。",
       "en-US": "The name of the OTS instance to create."
@@ -10,13 +10,21 @@
   },
   "table_schemas": {
     "description": "Map of table names to their primary key definitions (key=name, value=type)",
-    "type": "map(map(string))",
+    "type": "string",
     "optional": true,
     "i18n": {
       "zh-Hans": "表名到主键定义的映射（键=名称，值=类型）",
       "en-US": "Map of table names to their primary key definitions (key=name, value=type)"
     },
-    "default": { 
+    "default": "{}"
+  },
+  "vswitch_id": {
+    "description": "The ID of the created VSwitch.",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "创建的交换机的ID。",
+      "en-US": "The ID of the created VSwitch."
     }
   }
 }
