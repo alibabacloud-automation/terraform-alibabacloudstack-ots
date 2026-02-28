@@ -1,23 +1,17 @@
 output "ots_instance_id" {
   description = "The ID of the OTS instance."
-  value       = var.ots_instance_id
+  value       = local.ots_instance_id
 }
 
 output "ots_instance_name" {
   description = "The name of the OTS instance."
-  value       = var.name
-}
-
-output "ots_instance_description" {
-  description = "The description of the OTS instance."
-  value       = var.description
+  value       = local.ots_instance_name
 }
 
 output "ots_table_names" {
-  description = "The names of the OTS tables."
-  value       = keys(var.table_schemas)
+  description = "The names of the OTS tables that were actually created."
+  value       = keys(alibabacloudstack_ots_table.default)
 }
-
 
 output "vpc_attachment_id" {
   description = "The ID of the VPC attachment."
@@ -27,4 +21,9 @@ output "vpc_attachment_id" {
 output "vswitch_id" {
   description = "The ID of the created or used VSwitch."
   value       = local.ots_vswitch_id
+}
+
+output "vpc_id" {
+  description = "The ID of the created or used VPC."
+  value       = local.ots_vpc_id
 }

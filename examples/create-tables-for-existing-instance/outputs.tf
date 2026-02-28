@@ -1,19 +1,14 @@
-output "existing_instance_name" {
-  description = "The name of the existing OTS instance."
-  value       = alibabacloudstack_ots_instance.existing.name
+output "ots_instance_id" {
+  description = "The ID of the OTS instance."
+  value       = module.ots_instance.ots_instance_id
 }
 
-output "existing_instance_id" {
-  description = "The ID of the existing OTS instance."
-  value       = alibabacloudstack_ots_instance.existing.id
+output "ots_instance_name" {
+  description = "The name of the OTS instance."
+  value       = module.ots_instance.ots_instance_name
 }
 
-output "existing_instance_description" {
-  description = "The description of the existing OTS instance."
-  value       = alibabacloudstack_ots_instance.existing.description
-}
-
-output "cluster_type" {
-  description = "The cluster type used for the OTS instance."
-  value       = data.alibabacloudstack_ots_clusters.existing.clusters.0.cluster_type
+output "ots_table_names" {
+  description = "The names of the OTS tables that were actually created."
+  value       = module.ots_instance.ots_table_names
 }

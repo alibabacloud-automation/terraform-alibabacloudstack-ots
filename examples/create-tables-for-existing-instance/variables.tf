@@ -1,9 +1,9 @@
-variable "instance_name" {
-  description = "The name of the OTS instance to create."
+variable "ots_instance_id" {
+  description = "The ID of an existing OTS instance"
 }
 
 
 variable "table_schemas" {
   description = "Map of table names to their primary key definitions (key=name, value=type)"
-  default = {}
+  default     = {}
 }

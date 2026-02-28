@@ -13,13 +13,6 @@
       "en-US": "The name of the OTS instance."
     }
   },
-  "ots_instance_description": {
-    "description": "The description of the OTS instance.",
-    "i18n": {
-      "zh-Hans": "OTS实例的描述。",
-      "en-US": "The description of the OTS instance."
-    }
-  },
   "ots_table_names": {
     "description": "The names of the OTS tables.",
     "i18n": {
@@ -39,6 +32,13 @@
     "i18n": {
       "zh-Hans": "创建或使用的VSwitch的ID。",
       "en-US": "The ID of the created or used VSwitch."
+    }
+  },
+  "vpc_id": {
+    "description": "The ID of the created or used VPC.",
+    "i18n": {
+      "zh-Hans": "创建或使用的VPC的ID。",
+      "en-US": "The ID of the created or used VPC."
     }
   }
 }

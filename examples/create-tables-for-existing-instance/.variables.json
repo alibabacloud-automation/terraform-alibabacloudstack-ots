@@ -1,11 +1,11 @@
 {
-  "instance_name" : {
-    "description" : "The name of the OTS instance to create.",
+  "ots_instance_id" : {
+    "description" : "The ID of an existing OTS instance",
     "type" : "string",
     "optional" : true,
     "i18n" : {
-      "zh-Hans" : "要创建的OTS实例名称。",
-      "en-US" : "The name of the OTS instance to create."
+      "zh-Hans" : "已经存在的Ots实例ID",
+      "en-US" : "The ID of an existing OTS instance"
     }
   },
   "table_schemas" : {
