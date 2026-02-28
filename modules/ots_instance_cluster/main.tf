@@ -29,7 +29,7 @@ locals {
 resource "alibabacloudstack_vpc_vpc" "default" {
   count      = local.vswitch_create
   cidr_block = "172.16.0.0/16"
-  vpc_name   = "${var.name}-vpc"
+  vpc_name   = "${var.vpc_name}-vpc"
 }
 
 resource "alibabacloudstack_vpc_vswitch" "default" {
@@ -37,7 +37,7 @@ resource "alibabacloudstack_vpc_vswitch" "default" {
   vpc_id       = one(alibabacloudstack_vpc_vpc.default).id
   cidr_block   = "172.16.0.0/16"
   zone_id      = data.alibabacloudstack_zones.default.zones[0].id
-  vswitch_name = "${var.name}-vswitch"
+  vswitch_name = "${var.vpc_name}-vswitch"
 }
 
 # --- VPC/VSwitch derived locals (after VPC/VSwitch resources) ---

@@ -8,7 +8,7 @@ run "setup_instance" {
   }
 }
 
-run "create_tables" {
+run "validate" {
   command = apply
   module {
     source = "../examples/create-tables-for-existing-instance"
