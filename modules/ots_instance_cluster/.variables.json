@@ -2,7 +2,7 @@
   "ots_instance_id": {
     "description": "The id of the OTS instance.",
     "type": "string",
-    "optional": false,
+    "optional": true,
     "i18n": {
       "zh-Hans": "OTS实例的ID。",
       "en-US": "The id of the OTS instance."

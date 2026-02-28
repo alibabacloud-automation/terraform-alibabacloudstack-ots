@@ -1,1 +1,51 @@
-{}
+{
+  "vpc_id": {
+    "description": "The ID of the created VPC.",
+    "i18n": {
+      "zh-Hans": "创建的VPC的ID。",
+      "en-US": "The ID of the created VPC."
+    }
+  },
+  "vswitch_id": {
+    "description": "The ID of the created VSwitch.",
+    "i18n": {
+      "zh-Hans": "创建的VSwitch的ID。",
+      "en-US": "The ID of the created VSwitch."
+    }
+  },
+  "zone_id": {
+    "description": "The zone ID of the VSwitch.",
+    "i18n": {
+      "zh-Hans": "VSwitch的可用区ID。",
+      "en-US": "The zone ID of the VSwitch."
+    }
+  },
+  "ots_instance_id": {
+    "description": "The ID of the OTS instance.",
+    "i18n": {
+      "zh-Hans": "OTS实例的ID。",
+      "en-US": "The ID of the OTS instance."
+    }
+  },
+  "ots_instance_name": {
+    "description": "The name of the OTS instance.",
+    "i18n": {
+      "zh-Hans": "OTS实例的名称。",
+      "en-US": "The name of the OTS instance."
+    }
+  },
+  "ots_table_names": {
+    "description": "The names of the OTS tables.",
+    "i18n": {
+      "zh-Hans": "OTS表格的名称列表。",
+      "en-US": "The names of the OTS tables."
+    }
+  },
+  "vpc_attachment_id": {
+    "description": "The ID of the VPC attachment.",
+    "i18n": {
+      "zh-Hans": "VPC附件的ID。",
+      "en-US": "The ID of the VPC attachment."
+    }
+  }
+}

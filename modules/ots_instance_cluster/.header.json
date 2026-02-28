@@ -1,14 +1,14 @@
 {
   "title": {
-    "zh-Hans": "",
-    "en-US": ""
+    "zh-Hans": "OTS实例集群模块",
+    "en-US": "OTS Instance Cluster Module"
   },
   "overview": {
-    "zh-Hans": "",
-    "en-US": ""
+    "zh-Hans": "该模块用于在阿里云 Stack 上创建表格存储(OTS)实例和表，支持VPC附件、动态主键定义和目录配额管理。",
+    "en-US": "This module is used to create Table Store (OTS) instances and tables on Alibaba Cloud Stack, supporting VPC attachment, dynamic primary key definitions, and directory quota management."
   },
   "description": {
-    "zh-Hans": "",
-    "en-US": ""
+    "zh-Hans": "用于创建OTS实例、表格和VPC附件的Terraform模块",
+    "en-US": "Terraform module for creating OTS instances, tables, and VPC attachments"
   }
 }

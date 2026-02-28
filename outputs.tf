@@ -13,16 +13,6 @@ output "ots_instance_description" {
   value       = module.default.ots_instance_description
 }
 
-output "ots_table_name" {
-  description = "The name of the OTS table."
-  value       = module.default.ots_table_name
-}
-
-output "ots_table_id" {
-  description = "The ID of the OTS table."
-  value       = module.default.ots_table_id
-}
-
 output "vpc_attachment_id" {
   description = "The ID of the VPC attachment."
   value       = module.default.vpc_attachment_id

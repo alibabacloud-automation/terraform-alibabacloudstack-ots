@@ -1,65 +1,44 @@
 {
-  "ids": {
-    "description": "",
+  "ots_instance_id": {
+    "description": "The ID of the OTS instance.",
     "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
+      "zh-Hans": "OTS实例的ID。",
+      "en-US": "The ID of the OTS instance."
     }
   },
-  "availability_zone": {
-    "description": "",
+  "ots_instance_name": {
+    "description": "The name of the OTS instance.",
     "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
+      "zh-Hans": "OTS实例的名称。",
+      "en-US": "The name of the OTS instance."
+    }
+  },
+  "ots_instance_description": {
+    "description": "The description of the OTS instance.",
+    "i18n": {
+      "zh-Hans": "OTS实例的描述。",
+      "en-US": "The description of the OTS instance."
+    }
+  },
+  "ots_table_names": {
+    "description": "The names of the OTS tables.",
+    "i18n": {
+      "zh-Hans": "OTS表格的名称列表。",
+      "en-US": "The names of the OTS tables."
+    }
+  },
+  "vpc_attachment_id": {
+    "description": "The ID of the VPC attachment.",
+    "i18n": {
+      "zh-Hans": "VPC附件的ID。",
+      "en-US": "The ID of the VPC attachment."
     }
   },
   "vswitch_id": {
-    "description": "",
+    "description": "The ID of the created or used VSwitch.",
     "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "security_group_ids": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "key_name": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "image_id": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "instance_type": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "private_ips": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
-    }
-  },
-  "disk_category": {
-    "description": "",
-    "i18n": {
-      "zh-Hans": "",
-      "en-US": ""
+      "zh-Hans": "创建或使用的VSwitch的ID。",
+      "en-US": "The ID of the created or used VSwitch."
     }
   }
 }

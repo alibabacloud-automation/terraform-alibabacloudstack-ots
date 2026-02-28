@@ -1,6 +1,7 @@
 variable "ots_instance_id" {
   description = "The id of the OTS instance."
   type        = string
+  default     = ""
 }
 
 variable "name" {

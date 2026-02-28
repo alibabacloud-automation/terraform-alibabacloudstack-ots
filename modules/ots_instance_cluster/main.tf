@@ -81,3 +81,8 @@ resource "alibabacloudstack_ots_instance_attachment" "default" {
   vpc_name      = var.name
   vswitch_id    = local.vswitch_create == 0 && var.attach_vpc ? data.alibabacloudstack_vpc_vswitches.default.vswitches.0.id : alibabacloudstack_vpc_vswitch.default[0].id
 }
+
+locals {
+  vpc_attachment_id = var.attach_vpc ? alibabacloudstack_ots_instance_attachment.default.0.id:null
+  ots_vswitch_id = var.attach_vpc ? alibabacloudstack_ots_instance_attachment.default.0.vswitch_id:null
+}
