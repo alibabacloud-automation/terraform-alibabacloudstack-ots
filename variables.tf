@@ -1,22 +1,19 @@
 variable "name" {
   description = "The name of the OTS instance."
+  type        = string
 }
 
 variable "description" {
   description = "A brief description of the OTS instance."
-}
-
-variable "tags" {
-  description = "A mapping of tags to assign to the OTS instance."
-  type        = map(string)
-  default = {
-  }
+  type        = string
+  default     = ""
 }
 
 variable "table_schemas" {
   description = "Map of table names to their primary key definitions (key=name, value=type)"
+  type        = map(map(string))
+  default     = {}
 }
-
 
 variable "time_to_live" {
   description = "The retention time of data stored in this table (unit: second). -1 means never expired."
@@ -40,4 +37,16 @@ variable "attach_vpc" {
   description = "Whether to attach a VPC to the OTS instance."
   type        = bool
   default     = false
+}
+
+variable "vswitch_id" {
+  description = "The ID of an existing VSwitch to attach (when attach_vpc=true)."
+  type        = string
+  default     = ""
+}
+
+variable "vpc_name" {
+  description = "Name prefix for auto-created VPC/VSwitch (when attach_vpc=true and vswitch_id is not provided)."
+  type        = string
+  default     = ""
 }

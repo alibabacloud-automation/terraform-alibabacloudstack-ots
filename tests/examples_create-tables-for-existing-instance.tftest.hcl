@@ -24,5 +24,5 @@ run "validate" {
     condition     = length(output.ots_table_names) == 2
     error_message = "The number of tables does not match"
   }
-  
+
 }

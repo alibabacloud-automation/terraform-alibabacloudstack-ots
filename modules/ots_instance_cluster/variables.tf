@@ -61,7 +61,7 @@ variable "vswitch_id" {
   description = "The ID of the VSwitch being attached to the OTS instance."
   type        = string
   default     = ""
-    validation {
+  validation {
     condition     = !var.attach_vpc || (var.vswitch_id != "" || var.vpc_name != "")
     error_message = "Either 'vswitch_id' (to use an existing vswitch) or 'vpc_name' (to create a new one) must be set. Both cannot be empty/null."
   }

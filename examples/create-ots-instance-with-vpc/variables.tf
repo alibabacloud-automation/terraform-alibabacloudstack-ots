@@ -4,7 +4,7 @@ variable "instance_name" {
 
 variable "table_schemas" {
   description = "Map of table names to their primary key definitions (key=name, value=type)"
-  default = {}
+  default     = {}
 }
 
 variable "vswitch_id" {

@@ -1,4 +1,6 @@
 
-#占位文件，为了在该目录下启动测试用例，请勿修改
+# Placeholder file. 
+# Do not modify. Required to enable test cases in this directory.
+
 # tofu init
 # tofu test

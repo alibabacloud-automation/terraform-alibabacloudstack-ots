@@ -53,7 +53,7 @@ locals {
   # VPC ID associated with the VSwitch used by OTS
   ots_vpc_id = var.attach_vpc ? (
     length(data.alibabacloudstack_vpc_vswitches.default.ids) > 0 ?
-    one(data.alibabacloudstack_vpc_vswitches.default.vswitches).vpc_id:
+    one(data.alibabacloudstack_vpc_vswitches.default.vswitches).vpc_id :
     one(alibabacloudstack_vpc_vswitch.default).vpc_id
   ) : null
 }

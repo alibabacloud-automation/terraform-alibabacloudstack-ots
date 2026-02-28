@@ -8,22 +8,17 @@ output "ots_instance_name" {
   value       = module.default.ots_instance_name
 }
 
-output "ots_instance_description" {
-  description = "The description of the OTS instance."
-  value       = module.default.ots_instance_description
-}
-
 output "vpc_attachment_id" {
   description = "The ID of the VPC attachment."
   value       = module.default.vpc_attachment_id
 }
 
-output "vpc_name" {
-  description = "The name of the attached VPC."
-  value       = module.default.vpc_name
-}
-
 output "vswitch_id" {
   description = "The ID of the attached VSwitch."
   value       = module.default.vswitch_id
+}
+
+output "vpc_id" {
+  description = "The ID of the attached or created VPC."
+  value       = module.default.vpc_id
 }

@@ -15,9 +15,9 @@ run "validate" {
   }
   variables {
     instance_name = "tfots1"
-    vswitch_id = run.setup_instance.vswitch_id
+    vswitch_id    = run.setup_instance.vswitch_id
   }
-    assert {
+  assert {
     condition     = output.vpc_attachment_id != ""
     error_message = "Vpc attach failed"
   }
