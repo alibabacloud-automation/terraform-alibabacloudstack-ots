@@ -1,26 +1,65 @@
 {
-  "ots_instance_id": {
-    "description": "The ID of the OTS instance."
+  "ids": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
   },
-  "ots_instance_name": {
-    "description": "The name of the OTS instance."
-  },
-  "ots_instance_description": {
-    "description": "The description of the OTS instance."
-  },
-  "ots_table_name": {
-    "description": "The name of the OTS table."
-  },
-  "ots_table_id": {
-    "description": "The ID of the OTS table."
-  },
-  "vpc_attachment_id": {
-    "description": "The ID of the VPC attachment."
-  },
-  "vpc_name": {
-    "description": "The name of the attached VPC."
+  "availability_zone": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
   },
   "vswitch_id": {
-    "description": "The ID of the attached VSwitch."
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "security_group_ids": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "key_name": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "image_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "instance_type": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "private_ips": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "disk_category": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
   }
 }

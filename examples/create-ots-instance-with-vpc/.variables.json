@@ -1,0 +1,41 @@
+{
+  "instance_name": {
+    "description": "The name of the OTS instance to create.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "要创建的OTS实例名称。",
+      "en-US": "The name of the OTS instance to create."
+    },
+    "default": "tfots1"
+  },
+  "table_schemas": {
+    "description": "Map of table names to their primary key definitions (key=name, value=type)",
+    "type": "map(map(string))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "表名到主键定义的映射（键=名称，值=类型）",
+      "en-US": "Map of table names to their primary key definitions (key=name, value=type)"
+    },
+    "default": {
+      "tables1": {
+        "pk1": "Integer",
+        "pk2": "String"
+      },
+      "tables2": {
+        "pk1": "Integer",
+        "pk2": "String"
+      }
+    }
+  },
+  "attach_vpc": {
+    "description": "Whether to attach a VPC to the OTS instance.",
+    "type": "bool",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否将VPC附加到OTS实例。",
+      "en-US": "Whether to attach a VPC to the OTS instance."
+    },
+    "default": true
+  }
+}

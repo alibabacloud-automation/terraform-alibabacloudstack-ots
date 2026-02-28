@@ -1,5 +1,14 @@
 {
-  "name": "ots_instance_cluster",
-  "description": "Module for creating OTS instance and table",
-  "provider": "alibabacloudstack"
+  "title": {
+    "zh-Hans": "",
+    "en-US": ""
+  },
+  "overview": {
+    "zh-Hans": "",
+    "en-US": ""
+  },
+  "description": {
+    "zh-Hans": "",
+    "en-US": ""
+  }
 }

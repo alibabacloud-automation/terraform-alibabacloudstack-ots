@@ -1,0 +1,9 @@
+{
+  "existing_instance_name": {
+    "description": "The name of the existing OTS instance.",
+    "i18n": {
+      "zh-Hans": "现有OTS实例的名称。",
+      "en-US": "The name of the existing OTS instance."
+    }
+  }
+}

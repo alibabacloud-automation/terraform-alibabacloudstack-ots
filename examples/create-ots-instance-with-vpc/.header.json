@@ -1,26 +1,14 @@
 {
-  "name": "create-ots-instance-with-vpc",
-  "description": "Create OTS instance with tables and attach to VPC",
-  "provider": "alibabacloudstack",
-  "usecase": "This example demonstrates how to create an OTS instance with multiple tables and attach it to a VPC. It creates new VPC/VSwitch resources.",
-  "inputs": [
-    {
-      "name": "instance_name",
-      "description": "The name of the OTS instance to create",
-      "required": false,
-      "default": "tfots1"
-    },
-    {
-      "name": "table_schemas",
-      "description": "Map of table names to their primary key definitions",
-      "required": false
-    },
-    {
-      "name": "attach_vpc",
-      "description": "Whether to attach a VPC to the OTS instance",
-      "required": false,
-      "default": true
-    }
-  ],
-  "outputs": []
+  "title": {
+    "zh-Hans": "创建带VPC的OTS实例",
+    "en-US": "Create OTS Instance with VPC"
+  },
+  "overview": {
+    "zh-Hans": "此示例演示如何创建带有多个表格的OTS实例，并将其附加到VPC。它会创建新的VPC/VSwitch资源。",
+    "en-US": "This example demonstrates how to create an OTS instance with multiple tables and attach it to a VPC. It creates new VPC/VSwitch resources."
+  },
+  "description": {
+    "zh-Hans": "创建OTS实例并附加到VPC的示例",
+    "en-US": "Example for creating OTS instance with VPC attachment"
+  }
 }
