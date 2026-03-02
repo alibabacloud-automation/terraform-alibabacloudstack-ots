@@ -24,7 +24,7 @@ This example creates a new OTS instance with tables and attaches it to an existi
    terraform apply
    ```
 
-4. Clean up (deletes OTS instance, tables, and VPC attachment—but not the VSwitch or VPC):
+4. Clean up (deletes OTS instance, tables, and VPC attachment, but not the VSwitch or VPC):
    ```bash
    terraform destroy
    ```
@@ -90,5 +90,5 @@ Example `table_schemas`:
 ## Notes
 
 - The VSwitch (`vswitch_id`) must already exist in your account.
-- Destroying this configuration will not delete the VSwitch or VPC—only the OTS instance, its tables, and the attachment.
+- Destroying this configuration will not delete the VSwitch or VPC-only the OTS instance, its tables, and the attachment.
 - If you want the module to create a new VPC/VSwitch, use the `vpc_name` variable instead of `vswitch_id` (see module documentation).

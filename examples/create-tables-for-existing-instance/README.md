@@ -1,7 +1,7 @@
 # Create Tables for an Existing OTS Instance
 
 This Terraform example **creates one or more data tables in an existing Alibaba Cloud Table Store (OTS) instance**.  
-It invokes the `ots_instance_cluster` module to manage tables only—**no new OTS instance will be created**.
+It invokes the `ots_instance_cluster` module to manage tables only-**no new OTS instance will be created**.
 
 ## Usage
 
@@ -26,12 +26,12 @@ It invokes the `ots_instance_cluster` module to manage tables only—**no new OT
    terraform apply
    ```
 
-4. Clean up resources (tables only—OTS instance remains unaffected):
+4. Clean up resources (tables only-OTS instance remains unaffected):
    ```bash
    terraform destroy
    ```
 
-> ⚠️ **Note**: This operation **does not delete or modify the OTS instance itself**—it only manages tables within it.
+> ⚠️ **Note**: This operation **does not delete or modify the OTS instance itself**-it only manages tables within it.
 
 ## Requirements
 
@@ -55,7 +55,7 @@ It invokes the `ots_instance_cluster` module to manage tables only—**no new OT
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
-| `ots_instance_id` | **ID (i.e., name) of an existing OTS instance** | `string` | — | Yes |
+| `ots_instance_id` | **ID (i.e., name) of an existing OTS instance** | `string` | - | Yes |
 | `table_schemas` | Mapping of table names to primary key definitions (`{ table_name = { pk_name = "Type" } }`) | `map(map(string))` | `{}` | No |
 
 > 💡 **Supported primary key types**: `"String"`, `"Integer"`, `"Binary"`
@@ -71,7 +71,7 @@ It invokes the `ots_instance_cluster` module to manage tables only—**no new OT
 ## Notes
 
 - This example **assumes the OTS instance already exists**. If the specified `ots_instance_id` does not exist, Terraform will fail.
-- Running `terraform destroy` **only deletes tables created by this configuration**—it does not affect the OTS instance or other tables.
+- Running `terraform destroy` **only deletes tables created by this configuration**-it does not affect the OTS instance or other tables.
 - Once a table is created, **its primary key schema cannot be modified** (OTS limitation).
 
 ## References

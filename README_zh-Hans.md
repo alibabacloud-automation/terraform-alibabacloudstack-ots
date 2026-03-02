@@ -86,7 +86,7 @@ module "ots" {
 
 | 名称 | 描述 | 类型 | 默认值 | 必需 |
 |------|------|------|--------|------|
-| `name` | OTS 实例名称 | `string` | — | 是 |
+| `name` | OTS 实例名称 | `string` | - | 是 |
 | `description` | OTS 实例描述 | `string` | `""` | 否 |
 | `table_schemas` | 表名到主键定义的映射（格式：`{ 表名 = { 主键名 = "类型" } }`） | `map(map(string))` | `{}` | 否 |
 | `time_to_live` | 数据保留时间（秒），-1 表示永不过期 | `number` | `-1` | 否 |

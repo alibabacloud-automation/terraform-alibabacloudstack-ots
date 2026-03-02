@@ -86,7 +86,7 @@ module "ots" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
-| `name` | Name of the OTS instance | `string` | — | Yes |
+| `name` | Name of the OTS instance | `string` | - | Yes |
 | `description` | Description of the OTS instance | `string` | `""` | No |
 | `table_schemas` | Mapping of table names to primary key definitions (`{ table_name = { pk_name = "Type" } }`) | `map(map(string))` | `{}` | No |
 | `time_to_live` | Data retention period in seconds; `-1` means never expires | `number` | `-1` | No |
