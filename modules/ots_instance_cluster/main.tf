@@ -12,16 +12,28 @@ data "alibabacloudstack_vpc_vswitches" "default" {
   ids = [coalesce(var.vswitch_id, "fake_id")]
 }
 
+locals {
+  _validate_ots_instance = (
+    var.ots_instance_id != "" &&
+    length(data.alibabacloudstack_ots_instances.default[*].ids) == 0
+  ) ? error("OTS instance '${var.ots_instance_id}' not found.") : ""
+
+  _validate_vswitch = (
+    var.vswitch_id != "" &&
+    length(data.alibabacloudstack_vpc_vswitches.default[*].ids) == 0
+  ) ? error("VSwitch '${var.vswitch_id}' not found.") : ""
+}
+
 data "alibabacloudstack_ots_clusters" "anyone" {}
 
 # --- Control flags (based on data sources) ---
 
 locals {
   # Controls whether to create VSwitch/VPC
-  vswitch_create = length(data.alibabacloudstack_vpc_vswitches.default.ids) <= 0 && var.attach_vpc ? 1 : 0
+  vswitch_create = var.vswitch_id == "" && var.attach_vpc ? 1 : 0
 
   # Controls whether to create an OTS instance
-  ots_create = length(data.alibabacloudstack_ots_instances.default.ids) > 0 ? 0 : 1
+  ots_create = var.ots_instance_id != "" ? 0 : 1
 }
 
 # --- VPC & VSwitch Resources ---
@@ -38,25 +50,30 @@ resource "alibabacloudstack_vpc_vswitch" "default" {
   cidr_block   = "172.16.0.0/16"
   zone_id      = data.alibabacloudstack_zones.default.zones[0].id
   vswitch_name = "${var.vpc_name}-vswitch"
+  lifecycle {
+    precondition {
+      condition = !var.attach_vpc || (var.vswitch_id != "" || var.vpc_name != "")
+
+      error_message = "Configuration error: If 'attach_vpc' is true, you must provide either 'vswitch_id' (existing) or 'vpc_name' (to create new). Both cannot be empty."
+    }
+  }
 }
 
 # --- VPC/VSwitch derived locals (after VPC/VSwitch resources) ---
 
 locals {
-  # VSwitch ID used for OTS attachment
   ots_vswitch_id = var.attach_vpc ? (
-    length(data.alibabacloudstack_vpc_vswitches.default.ids) > 0 ?
-    var.vswitch_id :
-    one(alibabacloudstack_vpc_vswitch.default).id
+    var.vswitch_id != "" ? var.vswitch_id : one(alibabacloudstack_vpc_vswitch.default).id
   ) : null
 
-  # VPC ID associated with the VSwitch used by OTS
   ots_vpc_id = var.attach_vpc ? (
-    length(data.alibabacloudstack_vpc_vswitches.default.ids) > 0 ?
+    var.vswitch_id != "" ?
     one(data.alibabacloudstack_vpc_vswitches.default.vswitches).vpc_id :
     one(alibabacloudstack_vpc_vswitch.default).vpc_id
   ) : null
+
 }
+
 
 # --- OTS Instance Resource ---
 
@@ -65,6 +82,12 @@ resource "alibabacloudstack_ots_instance" "default" {
   name          = var.name
   description   = var.description
   specification = data.alibabacloudstack_ots_clusters.anyone.clusters[0].cluster_type
+  lifecycle {
+    precondition {
+      condition     = var.ots_instance_id != "" || var.name != ""
+      error_message = "Configuration error: Either 'ots_instance_id' (to use an existing instance) or 'name' (to create a new one) must be set. Both cannot be empty."
+    }
+  }
 }
 
 # --- OTS instance derived locals (after OTS instance resource) ---

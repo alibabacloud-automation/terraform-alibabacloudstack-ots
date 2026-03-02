@@ -37,7 +37,7 @@ It invokes the `ots_instance_cluster` module to manage tables only-**no new OTS 
 
 | Name | Version |
 |------|---------|
-| Terraform | >= 0.13 |
+| Terraform | >= 1.5.6 |
 
 ## Provider
 

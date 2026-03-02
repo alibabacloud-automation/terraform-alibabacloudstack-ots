@@ -4,10 +4,6 @@
     "i18n": {
       "zh-Hans": "实际创建的OTS表的名称。",
       "en-US": "The names of the OTS tables that were actually created."
-    },
-    "i18n_old": {
-      "zh-Hans": "OTS表格的名称列表。",
-      "en-US": "The names of the OTS tables."
     }
   },
   "ots_instance_id": {

@@ -96,7 +96,7 @@ module "ots" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13 |
+| terraform | >= 1.5.6 |
 
 ## Providers
 

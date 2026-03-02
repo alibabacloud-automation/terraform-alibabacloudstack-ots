@@ -33,7 +33,7 @@ This example creates a new OTS instance with tables and attaches it to an existi
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13 |
+| terraform | >= 1.5.6 |
 
 ## Provider
 

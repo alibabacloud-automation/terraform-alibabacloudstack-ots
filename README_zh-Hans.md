@@ -10,7 +10,7 @@
   - 支持复用现有 VSwitch（通过 `vswitch_id`）
   - 支持自动创建 VPC 和 VSwitch（通过 `vpc_name`）
 
-> ⚠️ **注意**：本模块**不支持**使用已有 OTS 实例（即不接受 `ots_instance_id`）。如需为现有实例建表，请使用其他示例。
+> ⚠️ **注意**：本模块**不支持**使用已有 OTS 实例（即不接受 `ots_instance_id`）。如需为现有实例建表，请使用其他模块或直接调用 `alibabacloudstack_ots_table` 资源。
 
 ## 使用方法
 
@@ -18,7 +18,7 @@
 
 ```hcl
 module "ots" {
-  source = "./terraform-alibabacloudstack-ots"
+  source = "<Module Path>"
 
   name = "my-ots-instance"
 
@@ -38,7 +38,7 @@ module "ots" {
 
 ```hcl
 module "ots" {
-  source = "./terraform-alibabacloudstack-ots"
+  source = "<Module Path>"
 
   name        = "secure-ots"
   attach_vpc  = true
@@ -56,7 +56,7 @@ module "ots" {
 
 ```hcl
 module "ots" {
-  source = "./terraform-alibabacloudstack-ots"
+  source = "<Module Path>"
 
   name       = "auto-vpc-ots"
   attach_vpc = true
@@ -70,19 +70,23 @@ module "ots" {
 }
 ```
 
-## 要求
+## 环境依赖
+
+### Terraform Core
 
 | 名称 | 版本 |
 |------|------|
-| Terraform | >= 0.13 |
+| Terraform | >= 1.5.6 |
 
-## 提供商
+### Provider
 
 | 名称 | 版本 |
 |------|------|
 | alibabacloudstack | >= 3.18.24, < 3.19.0 |
 
-## 输入变量
+## 模块变量
+
+### 输入变量
 
 | 名称 | 描述 | 类型 | 默认值 | 必需 |
 |------|------|------|--------|------|
@@ -98,7 +102,7 @@ module "ots" {
 
 > 💡 **互斥规则**：当 `attach_vpc = true` 时，必须提供 `vswitch_id` 或 `vpc_name` 中的一个。
 
-## 输出变量
+### 输出变量
 
 | 名称 | 描述 |
 |------|------|
@@ -119,3 +123,4 @@ module "ots" {
 - 本模块**总是创建新的 OTS 实例**，不支持操作已有实例。
 - 表的主键结构一旦创建**无法修改**。
 - 当 `attach_vpc = true` 且未提供 `vswitch_id` 时，模块会自动创建 VPC 和 VSwitch。
+- 模块不暴露 `ots_table_names` 输出（该输出仅存在于子模块中，主模块未转发），如需获取表名列表，请直接在子模块调用中引用或通过 `table_schemas` 变量推导。

@@ -8,10 +8,6 @@ variable "name" {
   description = "The name of the OTS instance."
   type        = string
   default     = ""
-  validation {
-    condition     = var.ots_instance_id != "" || var.name != ""
-    error_message = "Either 'ots_instance_id' (to use an existing instance) or 'name' (to create a new one) must be set. Both cannot be empty/null."
-  }
 }
 
 
@@ -61,8 +57,4 @@ variable "vswitch_id" {
   description = "The ID of the VSwitch being attached to the OTS instance."
   type        = string
   default     = ""
-  validation {
-    condition     = !var.attach_vpc || (var.vswitch_id != "" || var.vpc_name != "")
-    error_message = "Either 'vswitch_id' (to use an existing vswitch) or 'vpc_name' (to create a new one) must be set. Both cannot be empty/null."
-  }
 }
