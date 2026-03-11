@@ -1,4 +1,3 @@
-=====
 # Alibaba Cloud Table Store (OTS) Terraform Module
 
 This module creates **OTS instances and tables** on Alibaba Cloud Stack and optionally configures **VPC network attachments**.
